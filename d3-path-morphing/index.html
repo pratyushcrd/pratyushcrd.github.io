@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>d3-path-morphing</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.css" rel="stylesheet">
+    <style>
+      .data-el svg{
+        -webkit-transform: scale(0.25, 0.25);
+        transform-origin: top left;
+      }
+      .data-el{
+        max-height: 250px;
+        overflow: hidden;
+      }
+      body{
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>d3-path-morphing Plugin</h1>
+      </div>
+        <p class="lead">d3 pluging for better path morphing animations</p>
+        <p class="lead"><a href="https://github.com/pratyushcrd/d3-path-morphing">Checkout on Github!</a></p>
+        
+        <blockquote>
+          <p>Usage</p>
+          <small><pre><code>
+d3.select('myPath')
+.transition()
+.duration(1000)
+.attrTween('d', function () {
+    var startPath = d3.select('#path1').attr('d'),
+      endPath = d3.select('#path2').attr('d');
+    return d3.morphPath(startPath, endPath);
+});
+          </code></pre>
+          </small>
+        </blockquote>
+
+
+        <hr class="col-md-12"/>
+        <div id="comaprison" class="row col col-md-12"></div>
+      </div>
+
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted"><a href="https://github.com/pratyushcrd">@pratyushcrd</a></p>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/d3.v4.min.js"></script>
+    <script src="https://rawgit.com/pratyushcrd/d3-path-morphing/master/build/d3-path-morphing.js"></script>
+    <script src="data.js"></script>
+    <script src="plugin.js"></script>
+  </body>
+</html>
